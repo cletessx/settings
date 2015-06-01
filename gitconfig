@@ -1,0 +1,44 @@
+[init]
+  templatedir = ~/.git_template
+[core]
+  pager = less -r
+  whitespace = trailing_space, space_before_tab
+  autocrlf = input
+[user]
+  name = Christophe Letessier
+  email = christophex.letessier@intel.com
+[color]
+  ui = auto
+[merge]
+  ;tool = meld
+  tool = vimdiff
+  conflictstyle = diff3
+[mergetool]
+  prompt = false
+[alias]
+  changes=diff --name-status
+  oneline=log --pretty=oneline --abbrev-commit --graph --decorate
+  lc=!git oneline ORIG_HEAD.. --stat --no-merges
+  amend=commit --amend
+  df = diff
+  dfc =diff --cached
+  sync=pull --rebase
+  co=checkout
+  ci=commit
+  st=status
+  br=branch
+  pick=cherry-pick
+  #undo='!sh -c "git diff && git reset --hard"'
+  lg = log -p
+  loo = log --color --pretty=oneline --abbrev-commit
+  lol = log --color --graph --decorate=full --pretty=oneline --abbrev-commit HEAD...HEAD~20
+  lola = log --color --graph --decorate=full --pretty=oneline --abbrev-commit --all
+  ok=reset HEAD
+  up=stash
+  down=stash apply
+  undo=reset --hard
+  back=reset --hard HEAD^
+  ctags = !.git/hooks/ctags
+
+[review "https://github.com"]
+  username=cletessx
